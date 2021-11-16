@@ -1,23 +1,23 @@
-//Realizar un programa que muestre cuántos días faltan para el próximo cumpleaños del
-//usuario y muestre “Felicidades!” si es el día señalado.
+/**
+ * EJERCICIO 24:
+ * En este ejercicio, de cada módulo se desea guardar su nombre, duración y alumnos matriculados (módulo, duración, numAlumnos). Utiliza la estructura que sea más conveniente.
+ */
+
+const asignaturas = new Map();
+
+var moduloDWECL = ["Desarrollo Web en Entorno Cliente", "500 horas", 60];
+var moduloDWES = ["Desarrollo Web en Entorno Servidor", "50 horas", 51];
+var moduloDAW = ["Despliegue de Aplicaciones Web", "250 horas", 55];
+
+ asignaturas.set("DWECL", moduloDWECL);
+ asignaturas.set("DWES", moduloDWES);
+ asignaturas.set("DAW", moduloDAW);
+
+ for (let [clave,valor] of asignaturas) {
+     document.write("El MODULO ES "+ clave +" y su informacion es: alumnos: "+valor[2]+" nombre: "+valor[0]+"</br>");
+ }
+ 
 
 
-var cumpleaños;
-var fechaActual = Date.now();
-
-cumpleaños = prompt("introduzca la fecha de su cumpleaños: dd/mm");
 
 
-cumpleaños = cumpleaños.split('/');
-fecha1 = new Date(fecha1[1],(fecha1[0]-1),2021);
-
-
-fechaActual = fechaActual.getTime();
-
-if(fecha1.getTime() < fecha2.getTime()){
-    alert("la fecha1 es anterior a la fecha2.");
-}
-
-else{
-    alert("la fecha2 es anterior a la fecha1.");
-}
