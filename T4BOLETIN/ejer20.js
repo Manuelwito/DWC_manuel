@@ -1,21 +1,41 @@
-/*EJERCICIO 20: Hacer un programa en el que el usuario que introduzca, nombre, apellidos, DNI y fecha de nacimiento separado por comas. Esta entrada de datos se repetirá hasta que el usuario introduzca la cadena vacía. El programa debe guardar los datos en un array bidimensional.
-*/
+//Hacer el Tarot que comprueba que la fecha de nac, introducida no es mayor que la
+//actual.
 
-var usuarios = new Array();
-
-do{
-
-var cadena = prompt("introduzca su nombre, apellidos, Dni y fecha de nacimiento separados por comas: ");
-
-var usuario = cadena.split(',');
+var fecha;
+fechaActual = Date.now();
+//fechaActual = new Date().getTime(); es lo mismo que now()
 
 
 
+//while (true){
+    fecha = prompt("introduzca la fecha de nacimiento en formato (yyyy/mm/dd): ");
+    fecha = fecha.split('/');
 
-usuarios.push(usuario);
+    fecha = new Date(fecha[0],(fecha[1]-1),fecha[2]);
+    //EL MES SIEMPRE SE PONE CON UN MENOS 1 EN EL ARRAY
+
+    if(fecha.getTime() < fechaActual){
+        alert("la fecha introducida es correcta.");
+    }
+
+    else{
+        alert("la fecha introducida no es correcta.");
+    }
 
 
 
-}while(cadena != " ");
 
-document.write(usuarios);
+
+/*
+    Date.parse(fecha);
+    alert(getTime(fecha));      
+   
+    if(fecha > Date.now()){
+
+        continue;
+    }
+    else{
+        alert("fecha correcta");
+        break;
+    }
+}*/
