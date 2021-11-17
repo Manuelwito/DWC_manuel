@@ -2,9 +2,6 @@
 //operativo que esté utilizando
 
 
-
-
-
 document.getElementById("demo").innerHTML =
 "navigator.appName is " + navigator.appName;
 

@@ -7,14 +7,13 @@ class Punto{
         this.y=y;
     };
 
-
-
 cuadrante(){
     var coordenadas = new Array(this.x, this.y);
     return coordenadas;
 };
 
 }
+
 let punto = new Punto(17, 14);
 
 document.write(punto.cuadrante());
