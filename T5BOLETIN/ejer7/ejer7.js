@@ -1,3 +1,6 @@
+//Crear   un   formulario   con   los   botones   de   opción   que   representan   diferentes   colores. Utilice   el   atributo   id   para   cada   botón   de   radio.   Cambiar   el   fondo   del   formulario   al   color seleccionado.
+
+
 window.onload = inicializar;
 
 function inicializar(){
@@ -18,4 +21,6 @@ function cambiaColor(e){
         }
     }
 }
+
+
 
