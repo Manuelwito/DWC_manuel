@@ -36,8 +36,8 @@ function introduceCita(fecha, p, medico){
     existe = true;
     for (let i = 0; i < citasPrevias.length; i++) {
         if(citasPrevias[i].paciente !== p){
-        document.write("El paciente ya tiene una cita asignada, debe eliminarla para poder asignar otra");
-        existe = false; 
+            document.write("El paciente ya tiene una cita asignada, debe eliminarla para poder asignar otra");
+            existe = false; 
         }        
     }
     if(existe == false){
@@ -56,8 +56,8 @@ function elminarCita(citasPrevias, p) {
     eliminado = false;
     for (let i = 0; i < citasPrevias.length; i++) {
         if(citasPrevias[i].paciente == p){
-        citasPrevias.splice(i, 1);
-        eliminado = true;
+            citasPrevias.splice(i, 1);
+            eliminado = true;
         }        
     }
     return eliminado; 
@@ -72,8 +72,8 @@ function elminarCita(citasPrevias, p) {
 function buscarCita(citasPrevias, p) {
     for (let i = 0; i < citasPrevias.length; i++) {
         if(citasPrevias[i].paciente == p){
-        citasPrevias[i].imprime();
-        citaRetorno = citasPrevias[i];
+            citasPrevias[i].imprime();
+            citaRetorno = citasPrevias[i];
         return citaRetorno; 
         }        
     }
