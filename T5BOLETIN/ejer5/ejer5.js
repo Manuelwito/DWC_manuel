@@ -10,7 +10,7 @@ function inicializar(){
 }
 
 function cuentaCaracteres(e){
-    
+  
     
     if(e.currentTarget.name=="p1"){
         texto=e.getElementById("campo1").value;
