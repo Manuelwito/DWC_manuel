@@ -13,3 +13,5 @@ do{
 }while(regex.test(genero)==false);
 
 document.write("fin");
+
+//SIN TERMINAR
