@@ -1,8 +1,6 @@
 //Calcular de un conjunto de fechas la menor, la mayor y la diferencia en segundos entre
 //ambas.
 
-
-
 var fecha1;
 var fecha2;
 var fecha3;
@@ -10,8 +8,6 @@ var fecha3;
 fecha1 = prompt("introduzca la fecha 1: dd/mm/aaaa");
 fecha2 = prompt("introduzca la fecha 2: dd/mm/aaaa");
 fecha3 = prompt("introduzca la fecha 3: dd/mm/aaaa");
-
-
 
 fecha1 = fecha1.split('/');
 fecha1 = new Date(fecha1[2],(fecha1[1]-1),fecha1[0]);

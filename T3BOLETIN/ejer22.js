@@ -11,21 +11,6 @@ segundos = prompt("introduzca el tiempo en segundos: ");
 
 fecha1 = new Date(0,0,0,0,0,segundos,0);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 fecha2 = new Date(fecha2[2],(fecha2[1]-1),fecha2[0]);
 
 
