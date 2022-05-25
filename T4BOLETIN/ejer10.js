@@ -16,7 +16,7 @@ document.write("</br>");
 /*
 B: Escribe una función llamada colocaEnMedio que acepte como parámetros dos arrays y devuelva el primer array con todos los valores del segundo array colocados en el centro del primer array. 
 */
-let colocaEnMedio = (array1 , array2) => {
+const colocaEnMedio = (array1 , array2) => {
     var centro = Math.round(array1.length / 2);
     array1.splice(centro, 0, array2);
     return array1; 
