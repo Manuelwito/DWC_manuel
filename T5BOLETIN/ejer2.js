@@ -1,13 +1,14 @@
 var miFormulario = document.getElementById("Registro").addEventListener(input, btnenviar, false);
-function btnenviar(){
+function btnenviar() {
 
 
-for(var i=0; i<miFormulario.elements.length; i++){
+    for (var i = 0; i < miFormulario.elements.length; i++) {
 
-    if (miFormulario.elements[i].type == "text"){
-    document.write(miFormulario.elements[i].value);
-    document.write("<br>");
+        if (miFormulario.elements[i].type == "text") {
+            document.write(miFormulario.elements[i].value);
+            document.write("<br>");
+        }
+
     }
+}
 
-}
-}
