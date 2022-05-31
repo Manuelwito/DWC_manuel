@@ -1,0 +1,39 @@
+PASOS DOM:
+
+1-REGISTRAR LOS EVENTOS al inicializar el programa: el html y el js se cargan a la vez para que recoja todos los elementos primero hay que hacer el window.addEventListener("load", inicializar, false)
+
+2-RECOGER LOS ELEMENTOS QUE VAMOS A TRABAJAR CON EL getElementById("campoTexto1")
+
+3-una vez recogidos los elementos, los utilizamos de nuevo con add.EventListener("blur", required)
+
+4- utilizamos la función que queramos.
+
+ejemplo del ejer11 boletin T5:
+
+window.addEventListener("load", inicializar, false);
+
+function inicializar(){
+    const myInp = document.getElementById('username');
+    const mensaje = document.getElementById('mensaje');
+    myInp.addEventListener("blur", required);
+   
+
+
+    function required() { 
+   
+        if(myInp.value == ""){
+            mensaje.innerHTML="rellenalo";
+            myInp.focus();
+        }
+        
+        else{
+            alert("flama");
+            mensaje.innerHTML="";
+        }
+    }
+    
+}
+
+
+
+
