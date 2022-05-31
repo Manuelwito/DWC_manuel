@@ -1,5 +1,5 @@
-var miFormulario = document.getElementById("Registro").addEventListener(input, btn-enviar, false);
-function btn-enviar(){
+var miFormulario = document.getElementById("Registro").addEventListener(input, btnenviar, false);
+function btnenviar(){
 
 
 for(var i=0; i<miFormulario.elements.length; i++){
