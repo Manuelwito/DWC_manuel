@@ -14,7 +14,21 @@ function inicio() {
     ];
     const encabezado = document.getElementsByTagName('h1')[0];
     const body = document.getElementsByTagName('body')[0];
-    encabezado.addEventListener('click', cargarJuguetes);
+    encabezado.addEventListener('click', compruebaEncabezado);
+
+    /*
+    Metodo que comprueba si el encabezado h1 debe de mostrar los juguetes u ocultarlos
+    */
+    function compruebaEncabezado() {
+        if (encabezado.firstChild.nodeValue == "MOSTRAR JUGUETES") {
+            cargarJuguetes();
+            encabezado.firstChild.nodeValue = "OCULTAR JUGUETES"
+        } else {
+            document.body.lastChild.remove();
+            encabezado.firstChild.nodeValue = "MOSTRAR JUGUETES"
+        }
+    }
+
 
     function cargarJuguetes() {
 
@@ -35,21 +49,34 @@ function inicio() {
 
             p1.textContent = juguetes[i].ref;
             div4.textContent = juguetes[i].precio;
+            div4.setAttribute("class", "content_price");
+		    div4.appendChild(document.createTextNode(arrayJuguetes[i]["precio"] + "€"));
+
             //img atributo src y title lo recogen las dos del json
             img1.setAttribute("src", juguetes[i].img);
             img1.setAttribute("title", juguetes[i].title);
+
+            img1.addEventListener("click", mostrarDescripcion, false);
+
+            //divLeft
+		    div2.setAttribute("class", "left-block");
+            
+            //divDesc
             div3.setAttribute("class", "desc");
             div3.setAttribute("style", "display:none");
+            
+            
             a1.setAttribute("href", juguetes[i].href);
             a1.textContent = juguetes[i].coleccion;
 
             //POR ÚLTIMO UBICAMOS LOS NODOS CON SUS PADRES E HIJOS A TRAVÉS DE APPEND CHILD
             div3.appendChild(div4);
-            div3.appendChild(p1);
             div3.appendChild(a1);
-
-            div2.appendChild(div3);
+            div3.appendChild(p1);
+            
             div2.appendChild(img1);
+            div2.appendChild(div3);
+         
 
             li1.appendChild(div2);
 
@@ -57,45 +84,17 @@ function inicio() {
             div1.appendChild(ul);
             body.appendChild(div1);
         }
-   
-        var oculta = "OCULTAR JUGUETES";
-        encabezado.textContent = oculta;
-        encabezado.addEventListener('click', ocultarJuguetes);
+
     }
 
-    function ocultarJuguetes(){
-        const juguetes = arrayJuguetes;
-        var div1 =  document.getElementsByTagName('div')[0];
-        var ul = document.createElement('ul')[0];
-
-
-        //HAGO BUCLE INVIRTIENDO VALORES PERO SOLO ME ELIMINA UNO.
-        //UTILIZO EL GET ELEMENT BY TAG NAME Y EL REMOVE CHILD
-        for (var i = 0; i < juguetes.length; i++) {
-            var li1 = document.getElementsByTagName('li')[0];
-            var div2 = document.getElementsByTagName('div')[1];
-            var div3 = document.getElementsByTagName('div')[2];
-            var img1 = document.getElementsByTagName('img')[0];
-            var div4 = document.getElementsByTagName('div')[3];
-            var a1 = document.getElementsByTagName('a')[0];
-            var p1 = document.getElementsByTagName('p')[0];
-            
-            div3.removeChild(div4);
-            div3.removeChild(p1);
-            div3.removeChild(a1);
-
-            div2.removeChild(div3);
-            div2.removeChild(img1);
-
-            li1.removeChild(div2);
-
-            ul.removeChild(li1);
-            div1.removeChild(ul);
-            body.removeChild(div1);
+    function mostrarDescripcion(e) {
+        var div3 = e.currentTarget.nextSibling;
+        if (div3.getAttribute("style") == "display: block;") {
+            div3.setAttribute("style", "display: none;");
+        } else {
+            div3.setAttribute("style", "display: block;");
         }
 
-        var muestra = "MOSTRAR JUGUETES";
-        encabezado.textContent = muestra;
-        encabezado.addEventListener('click', cargarJuguetes);
     }
 }
+
